@@ -8,6 +8,15 @@ nav {
 	padding: 14px 16px;
 }
 
+.textBox {
+	padding: 10px 20px;
+	margin-left: 30px;
+	margin-right: 30px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-radius: 50px;
+	border: solid black;
+}
 
 h1 {
 	font-size: 30px;
