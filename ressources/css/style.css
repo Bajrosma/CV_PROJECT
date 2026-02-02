@@ -1,3 +1,43 @@
-h1{
-	color: red;
+body {
+	margin: 5%;
+	background-color: aliceblue;
+}
+
+nav {
+	float: right;
+	padding: 14px 16px;
+}
+
+
+h1 {
+	font-size: 30px;
+	color: white;
+	padding-left: 14px ;
+}
+
+a.nav {
+	font-size: 30px;
+	color: white;
+}
+
+header {
+    background-color: #333; /* aucun margin, changement de la taille du texte, et du possitionnement basique */
+    margin: 0px;
+    padding-bottom: 0px;
+    padding-top: 5px;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+	color: white;
+}
+
+footer {
+   background-color: #333;  /* changement de fond, de police, de possition au centre, et un padding top pour espacer */
+    position: bottom;
+    padding-top: 20px;
+    height: 30px;
+    text-align: center;
+    color: white;    
+    margin: 0px;
+    font-size: 16px;
 }
