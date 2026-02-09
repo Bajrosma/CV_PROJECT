@@ -1,34 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <!--
-            Auteur          : Osmanovic Bajro
-            Date            : 02.02.2026  
-            Description     : Page d'acceuil : présentation de moi
-        -->
+        Auteur          : Osmanovic Bajro
+        Date            : 02.02.2026
+        Description     : Page d'accueil : présentation de moi
+    -->
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="ressources/css/style.css" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acceuil</title>
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Accueil</title>
 </head>
-<body>
-    <header>
-        <h1>Curriculum Vitae</h1>
-        <nav>
-            <a class="nav" href="index.html">Acceuil</a> ¦
-            <a class="nav" href="src/html/ProjectPage.html">Resumé projet</a> ¦
-            <a class="nav" href="src/html/ContactPage.html">Contact</a> 
+
+<body class="m-[5%] bg-[aliceblue]">
+
+    <!-- HEADER (équivalent à ton CSS header + h1 + nav + a.nav) -->
+    <header class="bg-[#333] m-0 pt-[5px] pb-0 text-[15px] text-white flex justify-between">
+        <h1 class="text-[30px] text-white pl-[14px]">Curriculum Vitae</h1>
+
+        <!-- Ton nav float:right + padding 14px 16px -->
+        <nav class="px-[16px] py-[14px]">
+            <a class="text-[30px] text-white" href="index.html">Acceuil</a>
+            <span class="text-white"> ¦ </span>
+            <a class="text-[30px] text-white" href="src/html/ProjectPage.html">Resumé projet</a>
+            <span class="text-white"> ¦ </span>
+            <a class="text-[30px] text-white" href="src/html/ContactPage.html">Contact</a>
         </nav>
     </header>
-    <div>
-        <div class="textBox">
-            <h2>À propos</h2>
 
-            JMon nom est Bajro Osmanovic et j'ai un CFC d'informaticien d'entreprise. Je suis en train de suivre une formation en informatique de gestion.<br><br>
-            Ayant suivi une formation en informaticien d'entreprise, j'ai acquis une vaste connaissance dans le domaine. Cependant, je me sens particulièrement à l'aise dans les domaines des systèmes et du développement d'applications web.
-            <br><br>
-            En dehors de l'informatique : <br>
-            <ul>
+    <!-- Contenu -->
+    <div>
+        <!-- textBox (équivalent à ton CSS .textBox) -->
+        <div class="px-[20px] py-[10px] mx-[30px] my-[20px] rounded-[50px] border border-black">
+            <h2 class="text-xl font-semibold mb-4">À propos</h2>
+
+            <p>
+                Mon nom est Bajro Osmanovic et j'ai un CFC d'informaticien d'entreprise. Je suis en train de suivre une formation en informatique de gestion.
+                <br><br>
+                Ayant suivi une formation en informaticien d'entreprise, j'ai acquis une vaste connaissance dans le domaine. Cependant, je me sens particulièrement à l'aise dans les domaines des systèmes et du développement d'applications web.
+                <br><br>
+                En dehors de l'informatique :
+            </p>
+
+            <ul class="list-disc list-inside mt-2">
                 <li>Depuis plus de 13 ans, je pratique le karaté Shotokan et j'ai commencé à l'enseigner il y a 2 ans.</li>
                 <li>Je prends également plaisir à jouer à des jeux vidéo compétitifs et à des jeux de coopération.</li>
                 <li>J'apprécie également la lecture lorsque je suis intrigué par un livre.</li>
@@ -36,10 +53,10 @@
         </div>
     </div>
 
-    <footer>
-        <div class="copyright">© Osmanovic Bajro - curriculum vitae - developped in 2026</div>
+    <!-- FOOTER (équivalent à ton CSS footer) -->
+    <footer class="bg-[#333] text-white text-center pt-[20px] h-[30px] m-0 text-[16px]">
+        © Osmanovic Bajro - curriculum vitae - developped in 2026
     </footer>
-    
-</body>
 
+</body>
 </html>
