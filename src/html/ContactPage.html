@@ -1,28 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
+    <!--
+        Auteur          : Osmanovic Bajro
+        Date            : 26.02.2026sd
+        Description     : Page de contact : informations pour me contacter
+    -->
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../../ressources/css/style.css" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <title>Contact</title>
 </head>
-<body>
-    <header>
-        <h1>Contact</h1>
-        <nav>
-            <a class="nav" href="../../index.html">Acceuil</a> ¦
-            <a class="nav" href="ProjectPage.html">Resumé projet</a> ¦
-            <a class="nav" href="ContactPage.html">Contact</a> 
+<body class="m-[5%] bg-[aliceblue]">
+    <!-- HEADER -->
+    <header class="bg-[#333] m-0 pt-[5px] pb-0 text-[15px] text-white flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+        <div class="flex items-center justify-between">
+            <h1 class="text-[30px] text-white pl-[14px]">Contact</h1>
+        </div>
+        <!-- NAVIGATION -->
+        <nav class="px-[16px] py-[14px] flex flex-wrap gap-3 md:gap-4">
+            <a class="text-[22px] md:text-[30px] text-white hover:underline" href="../../index.html">Accueil</a>
+            <span class="text-white hidden md:inline"> ¦ </span>
+            <a class="text-[22px] md:text-[30px] text-white hover:underline" href="ProjectPage.html">Résumé projet</a>
+            <span class="text-white hidden md:inline"> ¦ </span>
+            <a class="text-[22px] md:text-[30px] text-white hover:underline" href="ContactPage.html">Contact</a>
         </nav>
     </header>
-    <div>
-        <p>Hello World</p>
-    </div>
+    <!-- MAIN CONTENT -->
+    <main class="mt-6 px-[20px] py-[16px] mx-[10px] md:mx-[30px] rounded-[40px] border border-black bg-white/60">
+        <h2 class="text-2xl font-semibold mb-3">Contact</h2>
 
-    <footer>
-        <div class="copyright">© Osmanovic Bajro - curriculum vitae - developped in 2026</div>
+        <div class="rounded-2xl bg-white/70 border border-black/10 p-4 space-y-2">
+        <p><span class="font-semibold">Email :</span> Bajroosmanovic18@gmail.com</p>
+        <p><span class="font-semibold">Téléphone :</span> +41 76 418 42 30</p>
+        <p><span class="font-semibold">Adresse :</span> 1860 Aigle, Chemin de la Planchette 16</p>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#333] text-white text-center pt-[20px] h-[50px] m-0 text-[16px]">
+        © Osmanovic Bajro - curriculum vitae - developed in 2026
     </footer>
-    
-</body>
 
+</body>
 </html>
