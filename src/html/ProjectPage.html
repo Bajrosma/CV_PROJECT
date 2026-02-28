@@ -24,6 +24,8 @@
         <nav class="px-[16px] py-[14px] flex flex-wrap gap-3 md:gap-4">
             <a class="text-[22px] md:text-[30px] text-white hover:underline" href="../../index.html">Accueil</a>
             <span class="text-white hidden md:inline"> ¦ </span>
+            <a class="text-[22px] md:text-[30px] text-white hover:underline" href="SkillsPage.html">Compétences</a>
+            <span class="text-white hidden md:inline"> ¦ </span>
             <a class="text-[22px] md:text-[30px] text-white hover:underline" href="ProjectPage.html">Résumé projet</a>
             <span class="text-white hidden md:inline"> ¦ </span>
             <a class="text-[22px] md:text-[30px] text-white hover:underline" href="ContactPage.html">Contact</a>
@@ -31,13 +33,37 @@
     </header>
     
     <!-- MAIN CONTENT -->
-    <section class="px-[20px] py-[16px] mx-[10px] md:mx-[30px] rounded-[40px] border border-black bg-white/50">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <div class="rounded-2xl bg-white/70 border border-black/10 p-4">
-                <h2 class="text-xl font-semibold mb-3">HELLO WORLD</h2>
+     <main class="mt-6 px-[20px] py-[16px] mx-[10px] md:mx-[30px] rounded-[40px] border border-black bg-white/60">
+                <div class="rounded-2xl bg-white/70 border border-black/10 p-4">
+                    <h2 class="text-xl font-semibold mb-3">Liste des projets :</h2>
+                </div>
             </div>
-        </div>
-    </section>
+            <div class="flex flex-wrap justify-center gap-10 mt-10">
+
+            <!-- Projet 1 -->
+            <div class="w-80 bg-gradient-to-br from-indigo-500 to-blue-600 text-white shadow-xl rounded-2xl p-6 hover:scale-105 transition-transform duration-300">
+                <h3 class="text-xl font-bold mb-3">👾 Space Invaders</h3>
+                <p class="text-sm leading-relaxed">
+                    Projet réalisé en 2ème année de CFC en C#.  
+                    Développement d’un jeu inspiré de Space Invaders avec gestion des déplacements,
+                    des tirs, des collisions, des ennemis et du score.  
+                    Ce projet m’a permis de travailler la programmation orientée objet,
+                    la logique événementielle ainsi que la structuration d’un projet logiciel complet.
+                </p>
+            </div>
+
+            <!-- Projet 2 -->
+            <div class="w-80 bg-gradient-to-br from-purple-500 to-pink-600 text-white shadow-xl rounded-2xl p-6 hover:scale-105 transition-transform duration-300">
+                <h3 class="text-xl font-bold mb-3">📞 Simulation Start-up & VoIP</h3>
+                <p class="text-sm leading-relaxed">
+                    Projet réalisé en 3ème année de CFC en équipe.  
+                    Mise en place d’une infrastructure réseau comprenant un routeur,
+                    un switch, un firewall et un téléphone VoIP, reliés à un serveur commun.  
+                    L’objectif était de simuler une start-up et de déployer une solution
+                    de téléphonie IP fonctionnelle dans un environnement réseau sécurisé.
+                </p>
+            </div>
+    </main>
 
     <!-- FOOTER -->
     <footer class="bg-[#333] text-white text-center pt-[20px] h-[50px] m-0 text-[16px]">
