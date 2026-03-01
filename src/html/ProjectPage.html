@@ -1,28 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
+    <!--
+        Auteur          : Osmanovic Bajro
+        Date            : 26.02.2026sd
+        Description     : Page de Projet : liste de mes projets
+    -->
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../../ressources/css/style.css" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Résumé projet</title>
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Contact</title>
 </head>
-<body>
-    <header>
-        <h1>Résumé Projet</h1>
-        <nav>
-            <a class="nav" href="../../index.html">Acceuil</a> ¦
-            <a class="nav" href="ProjectPage.html">Resumé projet</a> ¦
-            <a class="nav" href="ContactPage.html">Contact</a> 
+<body class="m-[5%] bg-[aliceblue]">
+    <!-- HEADER -->
+    <header class="bg-[#333] m-0 pt-[5px] pb-0 text-[15px] text-white flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+        <div class="flex items-center justify-between">
+            <h1 class="text-[30px] text-white pl-[14px]"></h1>
+        </div>
+        <!-- NAVIGATION -->
+        <nav class="px-[16px] py-[14px] flex flex-wrap gap-3 md:gap-4">
+            <a class="text-[22px] md:text-[30px] text-white hover:underline" href="../../index.html">Accueil</a>
+            <span class="text-white hidden md:inline"> ¦ </span>
+            <a class="text-[22px] md:text-[30px] text-white hover:underline" href="SkillsPage.html">Compétences</a>
+            <span class="text-white hidden md:inline"> ¦ </span>
+            <a class="text-[22px] md:text-[30px] text-white hover:underline" href="ProjectPage.html">Résumé projet</a>
+            <span class="text-white hidden md:inline"> ¦ </span>
+            <a class="text-[22px] md:text-[30px] text-white hover:underline" href="ContactPage.html">Contact</a>
         </nav>
     </header>
-    <div>
-        <p>Hello World</p>
-    </div>
-
-    <footer>
-        <div class="copyright">© Osmanovic Bajro - curriculum vitae - developped in 2026</div>
-    </footer>
     
-</body>
+    <!-- MAIN CONTENT -->
+     <main class="mt-6 px-[20px] py-[16px] mx-[10px] md:mx-[30px] rounded-[40px] border border-black bg-white/60">
+                <div class="rounded-2xl bg-white/70 border border-black/10 p-4">
+                    <h2 class="text-xl font-semibold mb-3">Liste des projets :</h2>
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-10 mt-10">
 
+            <!-- Projet 1 -->
+            <div class="w-80 bg-gradient-to-br from-indigo-500 to-blue-600 text-white shadow-xl rounded-2xl p-6 hover:scale-105 transition-transform duration-300">
+                <h3 class="text-xl font-bold mb-3">👾 Space Invaders</h3>
+                <p class="text-sm leading-relaxed">
+                    Projet réalisé en 2ème année de CFC en C#.  
+                    Développement d’un jeu inspiré de Space Invaders avec gestion des déplacements,
+                    des tirs, des collisions, des ennemis et du score.  
+                    Ce projet m’a permis de travailler la programmation orientée objet,
+                    la logique événementielle ainsi que la structuration d’un projet logiciel complet.
+                </p>
+            </div>
+
+            <!-- Projet 2 -->
+            <div class="w-80 bg-gradient-to-br from-purple-500 to-pink-600 text-white shadow-xl rounded-2xl p-6 hover:scale-105 transition-transform duration-300">
+                <h3 class="text-xl font-bold mb-3">📞 Simulation Start-up & VoIP</h3>
+                <p class="text-sm leading-relaxed">
+                    Projet réalisé en 3ème année de CFC en équipe.  
+                    Mise en place d’une infrastructure réseau comprenant un routeur,
+                    un switch, un firewall et un téléphone VoIP, reliés à un serveur commun.  
+                    L’objectif était de simuler une start-up et de déployer une solution
+                    de téléphonie IP fonctionnelle dans un environnement réseau sécurisé.
+                </p>
+            </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#333] text-white text-center pt-[20px] h-[50px] m-0 text-[16px]">
+        © Osmanovic Bajro - curriculum vitae - developed in 2026
+    </footer>
+
+</body>
 </html>
