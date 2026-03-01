@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!--
+        Auteur          : Osmanovic Bajro
+        Date            : 02.02.2026
+        Description     : Compétences professionnelles (bulles interactives)
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Compétences</title>
+</head>
+<body class="m-[5%] bg-[aliceblue]" id="pageRoot">
+    <!-- HEADER -->
+    <header class="bg-[#333] m-0 pt-[5px] pb-0 text-[15px] text-white flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+        <h1 class="text-[30px] text-white pl-[14px]">Curriculum Vitae</h1>
+
+        <nav class="px-[16px] py-[14px] flex flex-wrap gap-3 md:gap-4">
+            <a class="text-[22px] md:text-[30px] text-white hover:underline" href="../../index.html">Accueil</a>
+            <span class="text-white hidden md:inline"> ¦ </span>
+            <a class="text-[22px] md:text-[30px] text-white hover:underline" href="SkillsPage.html">Compétences</a>
+            <span class="text-white hidden md:inline"> ¦ </span>
+            <a class="text-[22px] md:text-[30px] text-white hover:underline" href="ProjectPage.html">Résumé projet</a>
+            <span class="text-white hidden md:inline"> ¦ </span>
+            <a class="text-[22px] md:text-[30px] text-white hover:underline" href="ContactPage.html">Contact</a>
+        </nav>
+    </header>
+    <section class="px-[20px] py-[16px] mx-[10px] md:mx-[30px] rounded-[40px] border border-black bg-white/60">
+        <h2 class="text-2xl font-semibold">Compétences professionnelles</h2>
+        <p class="mt-2 max-w-3xl">
+            Vue d’ensemble de mes compétences techniques (extraites de mon CV), regroupées par catégorie.
+        </p>
+
+        <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+            <!-- Programmation -->
+            <div class="rounded-2xl bg-white/70 border border-black/10 p-4">
+            <h3 class="font-semibold text-lg mb-3">Programmation</h3>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">Sites statiques/dynamiques</span>
+                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">C#</span>
+                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">Java</span>
+                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">Python</span>
+                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">JavaScript (bases)</span>
+            </div>
+            <p class="text-sm opacity-80 mt-3">
+                Développement d’applications/logiciels et de sites web, avec logique métier et structuration du code.
+            </p>
+            </div>
+
+            <!-- Infrastructures -->
+            <div class="rounded-2xl bg-white/70 border border-black/10 p-4">
+            <h3 class="font-semibold text-lg mb-3">Infrastructures</h3>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">Virtualisation</span>
+                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">Infra PME (simulation)</span>
+                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">Réseau</span>
+                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">VoIP</span>
+            </div>
+            <p class="text-sm opacity-80 mt-3">
+                Mise en place et configuration d’environnements réseau/infrastructure (routeur, switch, firewall, services).
+            </p>
+            </div>
+
+            <!-- Base de données -->
+            <div class="rounded-2xl bg-white/70 border border-black/10 p-4">
+            <h3 class="font-semibold text-lg mb-3">Base de données</h3>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">Conception</span>
+                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">Requêtes</span>
+                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">Gestion de données web</span>
+            </div>
+            <p class="text-sm opacity-80 mt-3">
+                Gestion et utilisation de bases de données dans le cadre de sites/applications.
+            </p>
+            </div>
+
+            <!-- Outils -->
+            <div class="rounded-2xl bg-white/70 border border-black/10 p-4">
+            <h3 class="font-semibold text-lg mb-3">Outils</h3>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">PowerShell</span>
+                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">PowerApps</span>
+                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">Microsoft 365</span>
+            </div>
+            <p class="text-sm opacity-80 mt-3">
+                Automatisation, scripts et outils low-code pour gagner en efficacité.
+            </p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-[#333] text-white text-center pt-[20px] h-[50px] m-0 text-[16px] mt-8">
+        © Osmanovic Bajro - curriculum vitae - developed in 2026
+    </footer>
+</body>
+</html>
