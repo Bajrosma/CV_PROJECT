@@ -10,6 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Compétences</title>
+    <style>
+        /* Animation simple pour donner un effet "flottant" aux bulles */
+        @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+        /* Classe appliquée aux compétences */
+        .skill-bubble { animation: floaty 3.2s ease-in-out infinite; }
+    </style>
 </head>
 <body class="m-[5%] bg-[aliceblue]" id="pageRoot">
     <!-- HEADER -->
@@ -27,70 +33,216 @@
         </nav>
     </header>
     <section class="px-[20px] py-[16px] mx-[10px] md:mx-[30px] rounded-[40px] border border-black bg-white/60">
-        <h2 class="text-2xl font-semibold">Compétences professionnelles</h2>
-        <p class="mt-2 max-w-3xl">
-            Vue d’ensemble de mes compétences techniques (extraites de mon CV), regroupées par catégorie.
-        </p>
-
-        <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
-
-            <!-- Programmation -->
-            <div class="rounded-2xl bg-white/70 border border-black/10 p-4">
-            <h3 class="font-semibold text-lg mb-3">Programmation</h3>
-            <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">Sites statiques/dynamiques</span>
-                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">C#</span>
-                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">Java</span>
-                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">Python</span>
-                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">JavaScript (bases)</span>
-            </div>
-            <p class="text-sm opacity-80 mt-3">
-                Développement d’applications/logiciels et de sites web, avec logique métier et structuration du code.
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
+            <div>
+            <h2 class="text-2xl font-semibold">Compétences professionnelles</h2>
+            <p class="mt-2 max-w-3xl">
+                Choisis un thème, puis affiche/masque les catégories. Les compétences s’affichent sous forme de bulles.
             </p>
             </div>
-
-            <!-- Infrastructures -->
-            <div class="rounded-2xl bg-white/70 border border-black/10 p-4">
-            <h3 class="font-semibold text-lg mb-3">Infrastructures</h3>
-            <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">Virtualisation</span>
-                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">Infra PME (simulation)</span>
-                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">Réseau</span>
-                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">VoIP</span>
+            <!-- CHANGEMENT COULEUR THEME-->
+            <div class="rounded-2xl border border-black/20 bg-white/70 p-4">
+            <label class="font-semibold block mb-2" for="themeSelect">Thème</label>
+            <select id="themeSelect" class="rounded-xl border border-black/20 px-3 py-2 bg-white">
+                <option value="alice" selected>Alice blue (défaut)</option>
+                <option value="dark">Sombre</option>
+                <option value="see">Ocean</option>
+                <option value="sunset">Coucher de soleil</option>
+            </select>
             </div>
-            <p class="text-sm opacity-80 mt-3">
-                Mise en place et configuration d’environnements réseau/infrastructure (routeur, switch, firewall, services).
+        </div>
+        <!-- FILTRE -->
+        <div class="mt-5 grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <div class="rounded-2xl bg-white/70 border border-black/10 p-4">
+            <h3 class="font-semibold text-lg mb-2">Filtres</h3>
+            <div class="space-y-2">
+                <label class="flex items-center gap-2">
+                <input type="checkbox" class="accent-black" data-filter="Programmation" checked>
+                <span>Programmation</span>
+                </label>
+                <label class="flex items-center gap-2">
+                <input type="checkbox" class="accent-black" data-filter="Infrastructures" checked>
+                <span>Infrastructures</span>
+                </label>
+                <label class="flex items-center gap-2">
+                <input type="checkbox" class="accent-black" data-filter="Base de données" checked>
+                <span>Base de données</span>
+                </label>
+                <label class="flex items-center gap-2">
+                <input type="checkbox" class="accent-black" data-filter="Outils" checked>
+                <span>Outils</span>
+                </label>
+            </div>
+
+            <p class="mt-4 text-sm opacity-80">
+                Astuce : clique sur une bulle pour afficher le détail.
             </p>
             </div>
-
-            <!-- Base de données -->
-            <div class="rounded-2xl bg-white/70 border border-black/10 p-4">
-            <h3 class="font-semibold text-lg mb-3">Base de données</h3>
-            <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">Conception</span>
-                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">Requêtes</span>
-                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">Gestion de données web</span>
+            <!-- CHANGEMENT COULEUR THEME-->
+            <div class="lg:col-span-2 rounded-2xl bg-white/70 border border-black/10 p-4">
+            <div id="bubbleWrap" class="flex flex-wrap gap-3"></div>
+            <div id="skillDetail" class="hidden mt-4 rounded-2xl border border-black/10 bg-white p-4"></div>
             </div>
-            <p class="text-sm opacity-80 mt-3">
-                Gestion et utilisation de bases de données dans le cadre de sites/applications.
-            </p>
-            </div>
-
-            <!-- Outils -->
-            <div class="rounded-2xl bg-white/70 border border-black/10 p-4">
-            <h3 class="font-semibold text-lg mb-3">Outils</h3>
-            <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">PowerShell</span>
-                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">PowerApps</span>
-                <span class="px-3 py-1 rounded-full border border-black/15 bg-white text-sm">Microsoft 365</span>
-            </div>
-            <p class="text-sm opacity-80 mt-3">
-                Automatisation, scripts et outils low-code pour gagner en efficacité.
-            </p>
-            </div>
-
         </div>
     </section>
+
+    <script>
+        /*
+        ==============================
+        1. DONNÉES DES COMPÉTENCES
+        ==============================
+        Chaque compétence contient :
+        - name : affiché dans la bulle
+        - category : utilisé pour les filtres
+        - detail : affiché au clic
+        */
+        const skills = [
+            { name: "HTML/CSS", category: "Programmation", detail: "Réalisation de sites web statique." },
+            { name: "PHP", category: "Programmation", detail: "Réalisation de sites web dynamique." },
+            { name: "C#", category: "Programmation", detail: "Développement logiciel et projets (ex: jeu / applications)." },
+            { name: "Java", category: "Programmation", detail: "Programmation orientée objet et applications." },
+            { name: "Python", category: "Programmation", detail: "Scripts et développement d’outils." },
+            { name: "JavaScript (bases)", category: "Programmation", detail: "Interactions front-end et logique UI simple." },
+
+            { name: "Virtualisation", category: "Infrastructures", detail: "Mise en place d’environnements virtualisés." },
+            { name: "Infra PME (simulation)", category: "Infrastructures", detail: "Conception d’une infrastructure type entreprise." },
+            { name: "Réseau", category: "Infrastructures", detail: "Configuration routeur/switch, segmentation, services." },
+            { name: "VoIP", category: "Infrastructures", detail: "Déploiement et configuration d’une téléphonie IP." },
+
+            { name: "Conception", category: "Base de données", detail: "Structuration de données et modèles." },
+            { name: "Requêtes", category: "Base de données", detail: "Requêtes et exploitation des données." },
+            { name: "Gestion de données web", category: "Base de données", detail: "Utilisation de DB côté site/app." },
+
+            { name: "PowerShell", category: "Outils", detail: "Automatisation et scripts d’administration." },
+            { name: "PowerApps", category: "Outils", detail: "Low-code pour formulaires / outils internes." },
+            { name: "Microsoft 365", category: "Outils", detail: "Outils bureautiques et environnement Microsoft." },
+        ];
+
+
+        /*
+        ==============================
+        2. RÉFÉRENCES DOM
+        ==============================
+        On récupère les éléments HTML nécessaires
+        */
+        const bubbleWrap = document.getElementById("bubbleWrap");     // zone où les bulles seront affichées
+        const detailBox = document.getElementById("skillDetail");     // zone de détail au clic
+        const themeSelect = document.getElementById("themeSelect");   // select du thème
+        const filterInputs = [...document.querySelectorAll("input[data-filter]")]; // checkboxes filtres
+        const pageRoot = document.getElementById("pageRoot");          // racine pour changer le thème
+
+
+        /*
+        ==============================
+        3. THÈMES DISPONIBLES
+        ==============================
+        Chaque thème modifie la couleur de fond globale
+        */
+        const themeMap = {
+            alice:  { bg: "bg-[aliceblue]" },
+            dark:   { bg: "bg-zinc-900" },
+            see: { bg: "bg-green-100" },
+            sunset: { bg: "bg-orange-50" },
+        };
+
+
+        /*
+        ==============================
+        4. FILTRES ACTIFS
+        ==============================
+        Retourne les catégories cochées
+        */
+        function getActiveCategories() {
+            return new Set(filterInputs.filter(i => i.checked).map(i => i.dataset.filter));
+        }
+
+
+        /*
+        ==============================
+        5. RENDU DES BULLES
+        ==============================
+        - Filtre les compétences
+        - Génère les bulles
+        - Gère le clic pour afficher le détail
+        */
+        function render() {
+            const active = getActiveCategories();
+            bubbleWrap.innerHTML = "";
+
+            skills
+            .filter(s => active.has(s.category))
+            .forEach(s => {
+                const btn = document.createElement("button");
+                btn.type = "button";
+
+                // Style Tailwind des bulles
+                btn.className =
+                "skill-bubble px-4 py-2 rounded-full border border-black/10 bg-white " +
+                "shadow-sm hover:shadow-md hover:scale-[1.02] transition-transform text-sm";
+
+                btn.textContent = s.name;
+
+                // Affichage du détail au clic
+                btn.addEventListener("click", () => {
+                detailBox.classList.remove("hidden");
+                detailBox.innerHTML = `
+                    <div>
+                    <p class="font-semibold">${s.name}</p>
+                    <p class="text-sm opacity-80 mt-1">${s.category}</p>
+                    </div>
+                    <p class="mt-3 text-sm">${s.detail}</p>
+                `;
+                });
+
+                bubbleWrap.appendChild(btn);
+            });
+            // Message si aucun filtre actif
+            if (!bubbleWrap.children.length) {
+            bubbleWrap.innerHTML = `<p class="text-sm opacity-70">Aucune compétence à afficher avec ces filtres.</p>`;
+            detailBox.classList.add("hidden");
+            }
+        }
+        /*
+        ==============================
+        6. APPLICATION DU THÈME
+        ==============================
+        Change le fond global
+        */
+        function applyTheme(value) {
+            const themes = Object.values(themeMap).map(t => t.bg);
+            // Reset anciens thèmes
+            pageRoot.classList.remove(...themes);
+            // Applique le nouveau fond
+            pageRoot.classList.add(themeMap[value].bg);
+            // Mode sombre → texte blanc
+            // Reset texte
+            pageRoot.classList.remove("text-zinc-100");
+
+            // Applique texte uniquement si défini
+            if (themeMap[value].text) {
+                pageRoot.classList.add(themeMap[value].text);
+            }
+        }
+
+
+        /*
+        ==============================
+        7. ÉVÉNEMENTS
+        ==============================
+        - changement de filtre
+        - changement de thème
+        */
+        filterInputs.forEach(i => i.addEventListener("change", render));
+        themeSelect.addEventListener("change", e => applyTheme(e.target.value));
+        /*
+        ==============================
+        8. INITIALISATION
+        ==============================
+        */
+        applyTheme(themeSelect.value);
+        render();
+
+    </script>
 
     <footer class="bg-[#333] text-white text-center pt-[20px] h-[50px] m-0 text-[16px] mt-8">
         © Osmanovic Bajro - curriculum vitae - developed in 2026
